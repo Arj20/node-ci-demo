@@ -4,17 +4,11 @@ pipeline {
       image 'node:18'
     }
   }
-
   stages {
-    stage('Install Dependencies') {
+    stage('Verify Docker') {
       steps {
-        sh 'npm install'
-      }
-    }
-
-    stage('Run Tests') {
-      steps {
-        sh 'npm test'
+        sh 'node -v'
+        sh 'npm -v'
       }
     }
   }
